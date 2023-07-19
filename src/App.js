@@ -6,6 +6,7 @@ import Room from "./components/Room/Room";
 import RoomJoin from "./components/RoomJoin/RoomJoin";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
+import Callback from "./components/Callback/Callback";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" element={<Homepage />} />
             <Route path="/join" element={<RoomJoin />} />
             <Route path="/create" element={<CreateRoom />} />
+            <Route path="/callback" element={<Callback/>} />
             <Route path="/Room/:pk" element={<Room />} />
           </Routes>
         </Router>

@@ -51,10 +51,12 @@ const Room = () => {
     try {
       const res = await axios.get("/spotify/is-authenticated");
       const data = res.data
+      console.log(res.data)
       setAuthenticated(data.status);
       console.log(authenticated);
-      if (!res.data.status) {
+      if (!authenticated) {
         const response = await axios.get("/spotify/get-auth-url");
+        console.log(response.data.url)
         window.location.replace(response.data.url);
       }
     } catch (error) {

@@ -34,7 +34,7 @@ const CreateRoom = (prop) => {
     };
     const res = await axios.post("/api/create-room", payload);
     console.log(res.data);
-    if (res.status === 201) {
+    if (res.status === 201 || res.status ===200) {
       console.log(res.data.code);
       navigate(`/room/${res.data.code}`);
     }
